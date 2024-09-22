@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="styling.css">
 </head>
 <body>
-    <h1> INST377 - Lab 4 </h1>
+    <h1 id = "pageheading"> INST377 - Lab 4 </h1>
     <div class="section-container">
         <div class="section">
             <form name = "nameInput" onsubmit="return(nameAlert())">
@@ -26,7 +26,7 @@
         </div>
 
         <div class="section">
-            <button type = "button"> Add Text </button>
+            <button type = "button" onclick = "addingText()"> Add Text </button>
         </div>
     </div>
     <script type = "text/javascript">
@@ -50,6 +50,10 @@
                 alert("Alert: Special character in the text!");
             document.textInput.userText.value = ""
             return false;
+        }
+
+        function addingText(){
+            document.getElementById("pageheading").textContent = "INST 377 - Lab 4 - Add Text"
         }
 
     </script>
