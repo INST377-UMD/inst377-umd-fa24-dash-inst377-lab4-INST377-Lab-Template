@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title> INST377 - Lab 4 </title>
+    <link rel="stylesheet" href="styling.css">
+</head>
+<body>
+    <h1 id = "pageheading"> INST377 - Lab 4 </h1>
+    <div class="section-container">
+        <div class="section">
+            <form name = "nameInput" onsubmit="return(nameAlert())">
+                <label for="name"> Name: </label>
+                <input type = "text" id = "name" required>
+                <input type = "submit" value = "Alert Me">
+            </form>
+        </div>
+
+        <div class="section">
+            <button type = "button" onclick = "changeColor()"> Change Color</button>
+        </div>
+        <div class="section">
+            <form name = "textInput" onsubmit="return(textTester())">
+                <label for="text"> Text Tester: </label>
+                <input type = "text" id = "userText" required>
+                <input type = "submit" value = "Validate Text">
+            </form>
+        </div>
+
+        <div class="section">
+            <button type = "button" onclick = "addingText()"> Add Text </button>
+        </div>
+    </div>
+    <script type = "text/javascript">
+        function nameAlert(){
+            alert('Hi, ' + document.nameInput.name.value + "!");
+            document.nameInput.name.value = "";
+            return false;
+        }
+        
+        function changeColor(){
+            if (document.body.style.backgroundColor == 'rgb(153, 200, 247)'){
+                const t = document.body.style.backgroundColor = 'rgb(224, 186, 250)';
+            }  else {
+                const t = document.body.style.backgroundColor = 'rgb(153, 200, 247)';
+            }
+        }
+
+        function textTester(){
+            var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+            if(validation.test(document.textInput.userText.value))
+                alert("Alert: Special character in the text!");
+            document.textInput.userText.value = ""
+            return false;
+        }
+
+        function addingText(){
+            document.getElementById("pageheading").textContent = "INST 377 - Lab 4 - Add Text"
+        }
+
+    </script>
+</body>
+</html>

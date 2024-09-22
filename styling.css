@@ -1,0 +1,22 @@
+
+body{
+    background-color: rgb(153, 200, 247);
+}
+
+
+
+.section-container{
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.section{
+
+    background-color: rgb(247, 243, 239);
+    text-align: center;
+    border: 2px solid rgb(63, 63, 63);
+    border-radius: 10px;
+    margin: 15px;
+    padding: 20px;
+}
